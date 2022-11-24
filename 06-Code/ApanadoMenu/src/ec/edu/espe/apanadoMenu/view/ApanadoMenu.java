@@ -4,21 +4,16 @@
  */
 package ec.edu.espe.apanadoMenu.view;
 
-<<<<<<< HEAD
-=======
 import ec.edu.espe.apanadoMenu.model.Customer;
 import java.util.Scanner;
 import ec.edu.espe.apanadoMenu.model.Order;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
->>>>>>> 567d556c5c09871081da9c324741a685d26c9f12
 /**
  *
- * @author Añasco Silvia, DeltaTeam, DCCO-ESPE
+ * @author Christopher Bazurto, DeltaTeam, DCCO-ESPE
  */
 public class ApanadoMenu {
-<<<<<<< HEAD
-=======
     public static void main (String[] args){
         int choiceOfTheMenu=0;
         int choiceOfTheMenuOrder=0;
@@ -428,6 +423,5 @@ public class ApanadoMenu {
         System.out.println("8. Back");
     }
     
->>>>>>> 567d556c5c09871081da9c324741a685d26c9f12
     
 }
