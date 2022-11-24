@@ -14,7 +14,7 @@ import java.util.InputMismatchException;
 >>>>>>> 567d556c5c09871081da9c324741a685d26c9f12
 /**
  *
- * @author Añasco Silvia, DeltaTeam, DCCO-ESPE
+ * @author Lindsay Barrionuevo, DeltaTeam, DCCO-ESPE
  */
 public class ApanadoMenu {
 <<<<<<< HEAD
