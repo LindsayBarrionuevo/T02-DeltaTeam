@@ -1,69 +1,64 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ec.edu.espe.apanadoMenu.model;
 
-/**
- *
- * @author Christopher Bazurto, DeltaTeam, DCCO-ESPE
- */
 public class Customer {
-    private String order;
-    private float orderCost;
+    private int id;
     private String name;
+    private String email;
+    private int[] birthday=new int[3];
 
-    public Customer(String order, float orderCost, String name) {
-        this.order = "";
-        this.orderCost = 0;
-        this.name = "";
+    
+    @Override
+    public String toString() {
+        return "Customer{" + "id=" + id + ", name=" + name + ", email=" + email + ", birthday=" + birthday + '}';
     }
-        public Customer() {
-        order = "";
-        orderCost = 0;
+    
+    public Customer() {
+        id = 0;
         name = "";
+        email = "";
+        birthday[0]=0;
+        birthday[1]=0;
+        birthday[2]=0;
+    }
+    
+    public Customer(int id, String name, String email, int[] birthday) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.birthday = birthday;
     }
 
-    /**
-     * @return the order
-     */
-    public String getOrder() {
-        return order;
+    
+
+    public int getId() {
+        return id;
     }
 
-    /**
-     * @param order the order to set
-     */
-    public void setOrder(String order) {
-        this.order = order;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    /**
-     * @return the orderCost
-     */
-    public float getOrderCost() {
-        return orderCost;
-    }
-
-    /**
-     * @param orderCost the orderCost to set
-     */
-    public void setOrderCost(float orderCost) {
-        this.orderCost = orderCost;
-    }
-
-    /**
-     * @return the name
-     */
     public String getName() {
         return name;
     }
 
-    /**
-     * @param name the name to set
-     */
     public void setName(String name) {
         this.name = name;
     }
-    
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public int[] getBirthday() {
+        return birthday;
+    }
+
+    public void setBirthday(int[] birthday) {
+        this.birthday = birthday;
+    }
 }
