@@ -2,7 +2,7 @@ package ec.edu.espe.apanadoMenu.model;
 
 /**
  *
- * @author Christopher Bazurto, DeltaTeam, DCCO-ESPE
+ * @author Lindsay Barrionuevo, DeltaTeam, DCCO-ESPE
  */
 public class Order {
     private String order;
