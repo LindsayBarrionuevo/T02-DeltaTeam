@@ -10,13 +10,15 @@ public class Order {
     private String Email;
     private int ID;
     private double totalPrice;
+    private boolean payMethod;
 
-    public Order(int id, String name, String Email, int ID, double total) {
+    public Order(int id, String name, String Email, int ID, double totalPrice, boolean payMethod) {
         this.id = id;
         this.name = name;
         this.Email = Email;
         this.ID = ID;
-        this.totalPrice = total;
+        this.totalPrice = totalPrice;
+        this.payMethod = payMethod;
     }
 
     public int getId() {
@@ -58,4 +60,14 @@ public class Order {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
+
+    public boolean isPayMethod() {
+        return payMethod;
+    }
+
+    public void setPayMethod(boolean payMethod) {
+        this.payMethod = payMethod;
+    }
+
+    
 }

@@ -28,13 +28,14 @@ import ec.edu.espe.apanadossystem.controller.DBManager;
  */
 public class FrmPayment extends javax.swing.JFrame {
 
+    ArrayList<Food> Order;
     /**
      * Creates new form Payment
      */
     public FrmPayment(ArrayList<Food> foodOrdered) {
         initComponents();
         OrderManager.initialiceTable( tblOrder,foodOrdered,txtTotal);
-        
+        Order = foodOrdered;
     }
 
     /**
@@ -245,9 +246,9 @@ public class FrmPayment extends javax.swing.JFrame {
                     .addComponent(jLabel8)
                     .addComponent(txtCellPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 19, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rbtmCash)
-                    .addComponent(rbtmCreditCard))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(rbtmCreditCard, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(rbtmCash))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -278,6 +279,13 @@ public class FrmPayment extends javax.swing.JFrame {
         boolean idValidate;
         boolean emailValidate;
         boolean posibleToContinue = true;
+        Boolean cash=false;
+        if(rbtmCash.isSelected()){
+            cash=true;
+        }
+        
+        
+        
         if (desition == 0) {
             //emptyFields();
             //btmSave.setEnabled(false);
@@ -293,34 +301,40 @@ public class FrmPayment extends javax.swing.JFrame {
                 posibleToContinue = false;
                 JOptionPane.showConfirmDialog(this, "ID is not valided", "Warnig on input ID", JOptionPane.WARNING_MESSAGE);
             }
+            
+
+            
+            
+            if (posibleToContinue) {
+                Order order;
+                Customer customer;
+                order = DBManager.saveOrder(posibleToContinue, txtAddres, txtCellPhone, txtEmail, txtID, txtName, txtTotal,cash);
+                customer = new Customer(txtName.getText(), txtEmail.getText(), Integer.parseInt(txtID.getText()), txtAddres.getText(), Integer.parseInt(txtCellPhone.getText()));
+
+                int response = JOptionPane.showConfirmDialog(this, "Gracias por Consumir en \n Los Mega Apanados de la ESPE\n¿Desea Calificarnos?", "Rate Us", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
+                if (response == JOptionPane.YES_OPTION) {
+                    FrmRate windowFrmRate = new FrmRate(Order,order,customer);
+                    windowFrmRate.setVisible(true);
+                    this.setVisible(false);
+                } else if (response == JOptionPane.NO_OPTION) {
+                    JOptionPane.showMessageDialog(this, "Gracias por consumir con nosotros\nEn breve se le mostrará su Factura");
+                    FrmInvoice windowFrmInvoice = new FrmInvoice(Order,order,customer);
+                    windowFrmInvoice.setVisible(true);
+                    this.setVisible(false);
+                } else if (response == JOptionPane.CLOSED_OPTION) {
+
+                }
+            }
 
         }
         if (desition == 1) {
-            //emptyFields();
-            //btmSave.setEnabled(false);
+            
         }
         if (desition == 2) {
 
         }
         
-        DBManager.saveOrder(posibleToContinue, txtAddres, txtCellPhone, txtEmail, txtID, txtName, txtTotal);
         
-        
-        if (posibleToContinue) {
-            int response = JOptionPane.showConfirmDialog(this, "Gracias por Consumir en \n Los Mega Apanados de la ESPE\n¿Desea Calificarnos?", "Rate Us", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);
-            if (response == JOptionPane.YES_OPTION) {
-                FrmRate windowFrmRate = new FrmRate();
-                windowFrmRate.setVisible(true);
-                this.setVisible(false);
-            } else if (response == JOptionPane.NO_OPTION) {
-                JOptionPane.showMessageDialog(this, "Gracias por consumir con nosotros\nEn breve se le mostrará su Factura");
-                FrmInvoice windowFrmInvoice = new FrmInvoice();
-                windowFrmInvoice.setVisible(true);
-                this.setVisible(false);
-            } else if (response == JOptionPane.CLOSED_OPTION) {
-
-            }
-        }
         
         
  

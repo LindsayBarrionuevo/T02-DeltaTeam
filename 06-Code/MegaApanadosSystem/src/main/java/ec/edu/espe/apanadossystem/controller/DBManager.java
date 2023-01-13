@@ -21,10 +21,10 @@ import org.bson.conversions.Bson;
  */
 public class DBManager {
 
-    public static void saveOrder(boolean posibleToContinue, JTextField txtAddres, JTextField txtCellPhone, JTextField txtEmail, JTextField txtID, JTextField txtName, JLabel txtTotal) {
+    public static Order saveOrder(boolean posibleToContinue, JTextField txtAddres, JTextField txtCellPhone, JTextField txtEmail, JTextField txtID, JTextField txtName, JLabel txtTotal,Boolean cash) {
         long collectionSize;
         int id;
-        Order order;
+        Order order = null;
         Customer customer;
         if (posibleToContinue) {
             String uri = "mongodb+srv://oop:oop@cluster0.f4j9tfw.mongodb.net/?retryWrites=true&w=majority";
@@ -39,7 +39,7 @@ public class DBManager {
                     collectionSize = collection.countDocuments();
                     id = (int) (collectionSize + 1);
 
-                    order = new Order(id, txtName.getText(), txtEmail.getText(), Integer.parseInt(txtID.getText()), Double.parseDouble(txtTotal.getText()));
+                    order = new Order(id, txtName.getText(), txtEmail.getText(), Integer.parseInt(txtID.getText()), Double.parseDouble(txtTotal.getText()),cash);
 
                     Document newOrder = new Document("id", id);
                     newOrder.append("name", txtName.getText());
@@ -78,6 +78,7 @@ public class DBManager {
                 }
             }
         }
+        return order;
         
         
     }
