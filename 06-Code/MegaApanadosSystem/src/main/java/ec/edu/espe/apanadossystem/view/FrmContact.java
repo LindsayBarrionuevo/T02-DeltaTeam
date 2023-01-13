@@ -4,6 +4,16 @@
  */
 package ec.edu.espe.apanadossystem.view;
 
+import com.mongodb.MongoException;
+import com.mongodb.client.MongoClient;
+import com.mongodb.client.MongoClients;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+import ec.edu.espe.apanadossystem.model.ContactEmail;
+import javax.swing.JOptionPane;
+import org.bson.Document;
+import org.bson.types.ObjectId;
+
 /**
  *
  * @author Lindsay Barrionuevo, DeltaTeam, DCCO-ESPE
@@ -27,40 +37,34 @@ public class FrmContact extends javax.swing.JFrame {
     private void initComponents() {
 
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         txtNameSupport = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
         txtEmailSupport = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         txtAreaMessageSupport = new javax.swing.JTextArea();
         btnBackHome = new javax.swing.JButton();
         btnSentSupport1 = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel1.setText("Contact Us");
 
-        jTextField1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTextField1.setText("Nombre:");
-
         txtNameSupport.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-
-        jTextField2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTextField2.setText("Email:");
+        txtNameSupport.setToolTipText("Nombre y Apellido");
 
         txtEmailSupport.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-
-        jTextField3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        jTextField3.setText("Mensaje:");
+        txtEmailSupport.setToolTipText("nombre@dominio.com");
 
         txtAreaMessageSupport.setColumns(20);
         txtAreaMessageSupport.setRows(5);
+        txtAreaMessageSupport.setToolTipText("Ingrese el mensaje");
         jScrollPane1.setViewportView(txtAreaMessageSupport);
 
         btnBackHome.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
-        btnBackHome.setText("Atrás");
+        btnBackHome.setText("Inicio");
         btnBackHome.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackHomeActionPerformed(evt);
@@ -69,6 +73,17 @@ public class FrmContact extends javax.swing.JFrame {
 
         btnSentSupport1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         btnSentSupport1.setText("Enviar");
+        btnSentSupport1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSentSupport1ActionPerformed(evt);
+            }
+        });
+
+        jLabel2.setText("Nombre:");
+
+        jLabel3.setText("Email:");
+
+        jLabel4.setText("Mensaje:");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -81,26 +96,25 @@ public class FrmContact extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(21, 21, 21)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtNameSupport, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(21, 21, 21)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(btnBackHome)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 66, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel3))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jScrollPane1))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(txtEmailSupport, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(btnSentSupport1)))))
-                .addContainerGap(10, Short.MAX_VALUE))
+                                        .addComponent(txtNameSupport, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(14, 14, 14)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(txtEmailSupport, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 268, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(49, 49, 49)
+                                        .addComponent(btnSentSupport1)))))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -111,17 +125,19 @@ public class FrmContact extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtNameSupport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtEmailSupport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(txtNameSupport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(txtEmailSupport, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel2)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabel3)
+                                .addGap(24, 24, 24)
+                                .addComponent(jLabel4)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
                 .addComponent(btnBackHome)
                 .addGap(22, 22, 22))
@@ -135,6 +151,47 @@ public class FrmContact extends javax.swing.JFrame {
         windowFrmHomeSystem.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnBackHomeActionPerformed
+
+    private void btnSentSupport1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSentSupport1ActionPerformed
+        // TODO add your handling code here:
+        String url = "mongodb+srv://oop:oop@cluster0.f4j9tfw.mongodb.net/test";
+        int validAdd=0;
+        ContactEmail contactEmail=null;
+        String nameContact=txtNameSupport.getText();
+        String emailContact=txtEmailSupport.getText();
+        String messageContact=txtAreaMessageSupport.getText();
+        try(MongoClient mongoClient = MongoClients.create(url))
+        {
+            System.out.println(contactEmail);
+            MongoDatabase database = mongoClient.getDatabase("Project");
+            try
+            {
+                MongoCollection<Document> collection = database.getCollection("MessageEmail");
+                System.out.println(contactEmail);
+ 
+                Document MessageEmail = new Document("_id", new ObjectId())
+                        .append("nameContact", nameContact)
+                        .append("emailContact", emailContact)
+                        .append("messageContact", messageContact);
+                        
+                
+                collection.insertOne(MessageEmail);
+                validAdd=1;
+            } catch (MongoException e)
+            {
+                JOptionPane.showMessageDialog(this,"Error to connect with the database " + e,"Warning",JOptionPane.WARNING_MESSAGE);
+            }           
+        }
+        if (validAdd == 1){
+            JOptionPane.showMessageDialog(this,"Mensaje enviado! Exitosamente!","Contactos",JOptionPane.INFORMATION_MESSAGE);
+            txtNameSupport.setText("");
+            txtEmailSupport.setText("");
+            txtAreaMessageSupport.setText("");
+            
+        }else{
+            JOptionPane.showMessageDialog(this,"Mensaje no enviado!!!","Contactos",JOptionPane.WARNING_MESSAGE);
+        }
+    }//GEN-LAST:event_btnSentSupport1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -176,10 +233,10 @@ public class FrmContact extends javax.swing.JFrame {
     private javax.swing.JButton btnBackHome;
     private javax.swing.JButton btnSentSupport1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
     private javax.swing.JTextArea txtAreaMessageSupport;
     private javax.swing.JTextField txtEmailSupport;
     private javax.swing.JTextField txtNameSupport;
