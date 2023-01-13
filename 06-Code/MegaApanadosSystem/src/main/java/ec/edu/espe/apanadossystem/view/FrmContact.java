@@ -50,7 +50,7 @@ public class FrmContact extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        jLabel1.setText("Contact Us");
+        jLabel1.setText("Contactanos");
 
         txtNameSupport.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         txtNameSupport.setToolTipText("Nombre y Apellido");
