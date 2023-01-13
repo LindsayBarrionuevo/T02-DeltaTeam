@@ -41,6 +41,7 @@ public class FrmInvoice extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         txtInvoiceName.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtInvoiceName.setEnabled(false);
 
         jLabel1.setFont(new java.awt.Font("Bodoni MT Black", 1, 24)); // NOI18N
         jLabel1.setText("FACTURA");
@@ -62,6 +63,7 @@ public class FrmInvoice extends javax.swing.JFrame {
 
         jTextField3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextField3.setText("Nombre:");
+        jTextField3.setEnabled(false);
 
         jTextField5.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jTextField5.setText("Dirección:");

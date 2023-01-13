@@ -1,17 +1,28 @@
 
 package ec.edu.espe.apanadossystem.view;
 
+import javax.swing.JComboBox;
+import javax.swing.JTable;
+import ec.edu.espe.apanadossystem.controller.OrderManager;
+import static ec.edu.espe.apanadossystem.controller.OrderManager.Add;
+import ec.edu.espe.apanadossystem.model.Food;
+import java.util.ArrayList;
+import javax.swing.JSpinner;
+
 /**
  *
  * @author Lindsay Barrionuevo, DeltaTeam, DCCO-ESPE
  */
 public class FrmOrder extends javax.swing.JFrame {
 
+    ArrayList<Food> foodOrdered = new ArrayList();
     /**
      * Creates new form FrmOrder
      */
     public FrmOrder() {
         initComponents();
+        OrderManager.initialiceTableAndCombo(tblMenu,comboMenu);
+        OrderManager.initialiceSpinner(spiAmount);
     }
 
     /**
@@ -28,6 +39,12 @@ public class FrmOrder extends javax.swing.JFrame {
         btnAddOrder = new javax.swing.JButton();
         btnFinishOrder = new javax.swing.JButton();
         btnCancel = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tblMenu = new javax.swing.JTable();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        comboMenu = new javax.swing.JComboBox<>();
+        spiAmount = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -35,6 +52,11 @@ public class FrmOrder extends javax.swing.JFrame {
         jLabel1.setText("Realizar Orden");
 
         btnAddOrder.setText("Agregar");
+        btnAddOrder.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddOrderActionPerformed(evt);
+            }
+        });
 
         btnFinishOrder.setText("Orden Lista");
         btnFinishOrder.addActionListener(new java.awt.event.ActionListener() {
@@ -47,6 +69,29 @@ public class FrmOrder extends javax.swing.JFrame {
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
+            }
+        });
+
+        tblMenu.setAutoCreateRowSorter(true);
+        tblMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tblMenu.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+
+            }
+        ));
+        tblMenu.setEnabled(false);
+        jScrollPane1.setViewportView(tblMenu);
+
+        jLabel2.setText("Producto: ");
+
+        jLabel4.setText("Cantidad:");
+
+        spiAmount.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                spiAmountStateChanged(evt);
             }
         });
 
@@ -66,15 +111,33 @@ public class FrmOrder extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 246, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(30, 30, 30)
-                                .addComponent(btnCancel)
-                                .addGap(43, 43, 43)
-                                .addComponent(btnAddOrder)))
-                        .addGap(0, 74, Short.MAX_VALUE)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(30, 30, 30)
+                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(spiAmount, javax.swing.GroupLayout.PREFERRED_SIZE, 86, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(jLabel2)
+                                            .addComponent(btnCancel))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(43, 43, 43)
+                                                .addComponent(btnAddOrder))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addGap(18, 18, 18)
+                                                .addComponent(comboMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
+                        .addGap(0, 54, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(btnFinishOrder)
                 .addGap(56, 56, 56))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(21, 21, 21)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 350, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -83,7 +146,17 @@ public class FrmOrder extends javax.swing.JFrame {
                 .addComponent(jLabel1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 382, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 147, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(comboMenu, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(spiAmount, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnAddOrder)
                     .addComponent(btnFinishOrder)
@@ -101,10 +174,18 @@ public class FrmOrder extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCancelActionPerformed
 
     private void btnFinishOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnFinishOrderActionPerformed
-        FrmPayment windowFrmPayment = new FrmPayment();
+        FrmPayment windowFrmPayment = new FrmPayment(foodOrdered);
         windowFrmPayment.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnFinishOrderActionPerformed
+
+    private void spiAmountStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_spiAmountStateChanged
+
+    }//GEN-LAST:event_spiAmountStateChanged
+
+    private void btnAddOrderActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddOrderActionPerformed
+        foodOrdered=Add(spiAmount,comboMenu, foodOrdered);
+    }//GEN-LAST:event_btnAddOrderActionPerformed
 
     /**
      * @param args the command line arguments
@@ -145,7 +226,13 @@ public class FrmOrder extends javax.swing.JFrame {
     private javax.swing.JButton btnAddOrder;
     private javax.swing.JButton btnCancel;
     private javax.swing.JButton btnFinishOrder;
+    private javax.swing.JComboBox<String> comboMenu;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSpinner spiAmount;
+    private javax.swing.JTable tblMenu;
     // End of variables declaration//GEN-END:variables
 }
