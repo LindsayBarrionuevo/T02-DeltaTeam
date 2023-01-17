@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 C:\Users\Dome\Desktop\OPP Project\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmInvoice.java
 C:\Users\Dome\Desktop\OPP Project\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmPayment.java
 C:\Users\Dome\Desktop\OPP Project\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmCard.java
@@ -15,3 +16,23 @@ C:\Users\Dome\Desktop\OPP Project\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.
 C:\Users\Dome\Desktop\OPP Project\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\controller\DBManager.java
 C:\Users\Dome\Desktop\OPP Project\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\model\ContactEmail.java
 C:\Users\Dome\Desktop\OPP Project\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\model\Menu.java
+=======
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmPayment.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\controller\DBManager.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\model\Customer.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\model\Menu.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmHomeSystem.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\model\ContactEmail.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\model\Order.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmInfo.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmOrder.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmInvoice.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\model\ApanadosSystem.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmCard.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmMenuFood.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\model\Food.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmContact.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\view\FrmRate.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\model\DebitCard.java
+E:\Software\OOP\grupo trabajo\T02-DeltaTeam\06-Code\MegaApanadosSystem V2.0.1\src\main\java\ec\edu\espe\apanadossystem\controller\OrderManager.java
+>>>>>>> e02307159e31d37d5a6235891b0020757bd5f17f

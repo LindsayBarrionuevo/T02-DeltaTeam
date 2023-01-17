@@ -27,7 +27,7 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Component id="pnlBillData" alignment="0" pref="597" max="32767" attributes="0"/>
+          <Component id="pnlBillData" alignment="0" max="32767" attributes="0"/>
           <Component id="pnlButton" alignment="0" max="32767" attributes="0"/>
       </Group>
     </DimensionLayout>
@@ -35,7 +35,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="32767" attributes="0"/>
-              <Component id="pnlBillData" min="-2" pref="524" max="-2" attributes="0"/>
+              <Component id="pnlBillData" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="pnlButton" min="-2" max="-2" attributes="0"/>
           </Group>

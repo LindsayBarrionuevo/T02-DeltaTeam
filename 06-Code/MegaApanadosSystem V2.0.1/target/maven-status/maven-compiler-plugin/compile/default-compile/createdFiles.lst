@@ -44,6 +44,10 @@ ec\edu\espe\apanadossystem\view\FrmHomeSystem.class
 ec\edu\espe\apanadossystem\view\FrmPayment$6.class
 ec\edu\espe\apanadossystem\view\FrmInfo$2.class
 ec\edu\espe\apanadossystem\view\FrmInfo.class
+<<<<<<< HEAD
+=======
+ec\edu\espe\apanadossystem\model\DebitCard.class
+>>>>>>> e02307159e31d37d5a6235891b0020757bd5f17f
 ec\edu\espe\apanadossystem\view\FrmHomeSystem$3.class
 ec\edu\espe\apanadossystem\view\FrmPayment$8.class
 ec\edu\espe\apanadossystem\view\FrmInfo$1.class
