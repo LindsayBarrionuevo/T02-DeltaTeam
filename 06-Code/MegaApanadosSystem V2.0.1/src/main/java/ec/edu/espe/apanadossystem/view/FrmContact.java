@@ -182,6 +182,8 @@ public class FrmContact extends javax.swing.JFrame {
     private void btnSentSupport1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSentSupport1ActionPerformed
         // TODO add your handling code here:
         String url = "mongodb+srv://oop:oop@cluster0.f4j9tfw.mongodb.net/test";
+        long countEmailSend=0;
+        float promEmailSend=0;
         int validAdd=0;
         ContactEmail contactEmail=null;
         String nameContact=txtNameSupport.getText();
@@ -204,6 +206,13 @@ public class FrmContact extends javax.swing.JFrame {
                 
                 collection.insertOne(MessageEmail);
                 validAdd=1;
+                countEmailSend = collection.countDocuments();
+                System.out.println(collection.countDocuments());
+                promEmailSend = (float)countEmailSend/24;
+                MongoCollection<Document> promEmail = database.getCollection("PromEmailSend");
+                    Document PromEmailSend = new Document("_id", new ObjectId())
+                            .append("promEmailSend", promEmailSend);
+                    promEmail.insertOne(PromEmailSend);
             } catch (MongoException e)
             {
                 JOptionPane.showMessageDialog(this,"Error to connect with the database " + e,"Warning",JOptionPane.WARNING_MESSAGE);
@@ -214,7 +223,6 @@ public class FrmContact extends javax.swing.JFrame {
             txtNameSupport.setText("");
             txtEmailSupport.setText("");
             txtAreaMessageSupport.setText("");
-            
         }else{
             JOptionPane.showMessageDialog(this,"Mensaje no enviado!!!","Contactos",JOptionPane.WARNING_MESSAGE);
         }

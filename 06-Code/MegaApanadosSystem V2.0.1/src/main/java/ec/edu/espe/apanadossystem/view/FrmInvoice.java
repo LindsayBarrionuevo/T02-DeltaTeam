@@ -1,10 +1,16 @@
 
 package ec.edu.espe.apanadossystem.view;
 
+import com.itextpdf.text.Document;
+import com.itextpdf.text.DocumentException;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 import ec.edu.espe.apanadossystem.controller.OrderManager;
 import ec.edu.espe.apanadossystem.model.Customer;
 import ec.edu.espe.apanadossystem.model.Food;
 import ec.edu.espe.apanadossystem.model.Order;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import java.text.DateFormat;
@@ -20,7 +26,7 @@ public class FrmInvoice extends javax.swing.JFrame {
     /**
      * Creates new form FrmInvoice
      */
-    public FrmInvoice(ArrayList<Food> Order,Order order,Customer customer) {
+    public FrmInvoice(ArrayList<Food> Order,Order order,Customer customer) throws FileNotFoundException, DocumentException {
         initComponents();
         OrderManager.initialiceTable( tblBilling,Order,txtPlus);
         DateFormat dateFormat;
@@ -46,6 +52,15 @@ public class FrmInvoice extends javax.swing.JFrame {
         }else{
             rbtmCard.setSelected(true);
         }
+        
+        
+        
+        
+        
+        
+        
+        
+        
     }
 
     /**
@@ -295,14 +310,14 @@ public class FrmInvoice extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(pnlBillData, javax.swing.GroupLayout.DEFAULT_SIZE, 597, Short.MAX_VALUE)
+            .addComponent(pnlBillData, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addComponent(pnlButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(pnlBillData, javax.swing.GroupLayout.PREFERRED_SIZE, 524, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(pnlBillData, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(pnlButton, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
