@@ -47,10 +47,15 @@ public class FrmOrder extends javax.swing.JFrame {
         spiAmount = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Chocolate", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Realizar Orden");
 
+        btnAddOrder.setBackground(new java.awt.Color(255, 255, 255));
+        btnAddOrder.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnAddOrder.setForeground(new java.awt.Color(0, 0, 102));
         btnAddOrder.setText("Agregar");
         btnAddOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -58,6 +63,9 @@ public class FrmOrder extends javax.swing.JFrame {
             }
         });
 
+        btnFinishOrder.setBackground(new java.awt.Color(255, 255, 255));
+        btnFinishOrder.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnFinishOrder.setForeground(new java.awt.Color(0, 0, 102));
         btnFinishOrder.setText("Orden Lista");
         btnFinishOrder.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -65,6 +73,9 @@ public class FrmOrder extends javax.swing.JFrame {
             }
         });
 
+        btnCancel.setBackground(new java.awt.Color(255, 255, 255));
+        btnCancel.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnCancel.setForeground(new java.awt.Color(0, 0, 102));
         btnCancel.setText("Cancelar");
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -73,7 +84,9 @@ public class FrmOrder extends javax.swing.JFrame {
         });
 
         tblMenu.setAutoCreateRowSorter(true);
+        tblMenu.setBackground(new java.awt.Color(204, 255, 255));
         tblMenu.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tblMenu.setForeground(new java.awt.Color(0, 0, 0));
         tblMenu.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
@@ -85,9 +98,16 @@ public class FrmOrder extends javax.swing.JFrame {
         tblMenu.setEnabled(false);
         jScrollPane1.setViewportView(tblMenu);
 
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Producto: ");
 
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Cantidad:");
+
+        comboMenu.setBackground(new java.awt.Color(255, 255, 255));
+        comboMenu.setForeground(new java.awt.Color(0, 0, 0));
 
         spiAmount.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
@@ -128,7 +148,7 @@ public class FrmOrder extends javax.swing.JFrame {
                                             .addGroup(layout.createSequentialGroup()
                                                 .addGap(18, 18, 18)
                                                 .addComponent(comboMenu, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE)))))))
-                        .addGap(0, 54, Short.MAX_VALUE)))
+                        .addGap(0, 45, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)

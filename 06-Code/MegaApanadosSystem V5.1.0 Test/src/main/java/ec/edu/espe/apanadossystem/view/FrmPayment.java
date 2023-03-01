@@ -70,10 +70,15 @@ public class FrmPayment extends javax.swing.JFrame {
         txtEmail = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(255, 255, 255));
 
         jLabel1.setFont(new java.awt.Font("Chocolate", 0, 36)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 0, 0));
         jLabel1.setText("Datos de Facturación");
 
+        btnPayment.setBackground(new java.awt.Color(255, 255, 255));
+        btnPayment.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        btnPayment.setForeground(new java.awt.Color(0, 0, 102));
         btnPayment.setText("Pagar");
         btnPayment.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -81,6 +86,9 @@ public class FrmPayment extends javax.swing.JFrame {
             }
         });
 
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jButton1.setForeground(new java.awt.Color(0, 0, 102));
         jButton1.setText("Back Order");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -88,17 +96,29 @@ public class FrmPayment extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
         jLabel5.setText("Nombre:");
 
+        jLabel9.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(0, 0, 0));
         jLabel9.setText("Email: ");
 
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("CI/RUC");
 
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("Direccion:");
 
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 0, 0));
         jLabel8.setText("Numero de telefono:");
 
         groupPayMethod.add(rbtmCreditCard);
+        rbtmCreditCard.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        rbtmCreditCard.setForeground(new java.awt.Color(0, 0, 0));
         rbtmCreditCard.setText("Pago con tarjeta");
         rbtmCreditCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -107,6 +127,8 @@ public class FrmPayment extends javax.swing.JFrame {
         });
 
         groupPayMethod.add(rbtmCash);
+        rbtmCash.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        rbtmCash.setForeground(new java.awt.Color(0, 0, 0));
         rbtmCash.setText("Efectivo");
         rbtmCash.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -115,14 +137,27 @@ public class FrmPayment extends javax.swing.JFrame {
         });
 
         tblOrder.setAutoCreateRowSorter(true);
+        tblOrder.setBackground(new java.awt.Color(255, 255, 255));
         tblOrder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        tblOrder.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        tblOrder.setForeground(new java.awt.Color(0, 0, 0));
         tblOrder.setEnabled(false);
         jScrollPane1.setViewportView(tblOrder);
 
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 0));
         jLabel2.setText("Total:  ");
 
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 0, 0));
         jLabel3.setText("$");
 
+        txtTotal.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtTotal.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtName.setBackground(new java.awt.Color(255, 255, 255));
+        txtName.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtName.setForeground(new java.awt.Color(0, 0, 0));
         txtName.setToolTipText("LastName Name");
         txtName.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -135,6 +170,9 @@ public class FrmPayment extends javax.swing.JFrame {
             }
         });
 
+        txtCellPhone.setBackground(new java.awt.Color(255, 255, 255));
+        txtCellPhone.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtCellPhone.setForeground(new java.awt.Color(0, 0, 0));
         txtCellPhone.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCellPhoneActionPerformed(evt);
@@ -146,6 +184,13 @@ public class FrmPayment extends javax.swing.JFrame {
             }
         });
 
+        txtAddres.setBackground(new java.awt.Color(255, 255, 255));
+        txtAddres.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtAddres.setForeground(new java.awt.Color(0, 0, 0));
+
+        txtID.setBackground(new java.awt.Color(255, 255, 255));
+        txtID.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtID.setForeground(new java.awt.Color(0, 0, 0));
         txtID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtIDActionPerformed(evt);
@@ -157,6 +202,9 @@ public class FrmPayment extends javax.swing.JFrame {
             }
         });
 
+        txtEmail.setBackground(new java.awt.Color(255, 255, 255));
+        txtEmail.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
+        txtEmail.setForeground(new java.awt.Color(0, 0, 0));
         txtEmail.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtEmailActionPerformed(evt);
@@ -172,12 +220,6 @@ public class FrmPayment extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton1)
-                .addGap(95, 95, 95)
-                .addComponent(btnPayment)
-                .addGap(109, 109, 109))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -202,7 +244,7 @@ public class FrmPayment extends javax.swing.JFrame {
                                                 .addComponent(txtAddres, javax.swing.GroupLayout.Alignment.LEADING)
                                                 .addComponent(txtID, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 169, Short.MAX_VALUE)
                                                 .addComponent(txtCellPhone)))))
-                                .addGap(0, 11, Short.MAX_VALUE))))
+                                .addGap(0, 0, Short.MAX_VALUE))))
                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -219,6 +261,12 @@ public class FrmPayment extends javax.swing.JFrame {
                                 .addComponent(rbtmCash, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap(46, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(81, 81, 81)
+                .addComponent(jButton1)
+                .addGap(95, 95, 95)
+                .addComponent(btnPayment)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -257,11 +305,11 @@ public class FrmPayment extends javax.swing.JFrame {
                     .addComponent(txtTotal, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 79, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(btnPayment)
                     .addComponent(jButton1))
-                .addGap(43, 43, 43))
+                .addGap(37, 37, 37))
         );
 
         pack();
