@@ -19,7 +19,6 @@ import org.bson.conversions.Bson;
  *
  * @author Lindsay Barrionuevo, DeltaTeam, DCCO-ESPE
  */
-
 public class DBManager {
 
     public static Order saveOrder(boolean posibleToContinue, JTextField txtAddres, JTextField txtCellPhone, JTextField txtEmail, JTextField txtID, JTextField txtName, JLabel txtTotal,Boolean cash) {
