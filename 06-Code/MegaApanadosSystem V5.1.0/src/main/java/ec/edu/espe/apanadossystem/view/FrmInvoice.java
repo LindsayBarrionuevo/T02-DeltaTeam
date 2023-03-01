@@ -3,14 +3,17 @@ package ec.edu.espe.apanadossystem.view;
 
 
 import ec.edu.espe.apanadossystem.controller.OrderManager;
+import ec.edu.espe.apanadossystem.controller.TaxCalculatorController;
 import ec.edu.espe.apanadossystem.model.Customer;
 import ec.edu.espe.apanadossystem.model.Food;
 import ec.edu.espe.apanadossystem.model.Order;
+import ec.edu.espe.apanadossystem.model.RestaurantTax;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
 import javax.swing.JTable;
 import java.text.DateFormat;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -24,15 +27,21 @@ public class FrmInvoice extends javax.swing.JFrame {
      * Creates new form FrmInvoice
      */
     public FrmInvoice(ArrayList<Food> Order,Order order,Customer customer){
+        
         initComponents();
         OrderManager.initialiceTable( tblBilling,Order,txtPlus);
         DateFormat dateFormat;
         String date;
-        double tax;
-        double total;
+        double taxValue;
+        double totalPrice;
+        DecimalFormat decimal;
+        decimal = new DecimalFormat("#.00");
+        RestaurantTax tax = RestaurantTax.getInstance();
         
-        tax = order.getTotalPrice()*0.12;
-        total = tax +order.getTotalPrice();
+        
+        totalPrice=TaxCalculatorController.CalculateTotalPrice((float) order.getTotalPrice());
+        taxValue=TaxCalculatorController.CalculateTaxValue((float) order.getTotalPrice());
+        
         dateFormat = new SimpleDateFormat("d MMM yyyy, HH:mm:ss");
         date = dateFormat.format(new Date());
         
@@ -42,20 +51,13 @@ public class FrmInvoice extends javax.swing.JFrame {
         txtAddres.setText(customer.getAddres());
         txtEmail.setText(customer.getEmail());
         txtIDBiiling.setText(String.valueOf(order.getID()));
-        txtTax.setText(String.valueOf(tax));
-        txtTotal.setText(String.valueOf(total));
+        txtTax.setText(String.valueOf(decimal.format(taxValue)));
+        txtTotal.setText(String.valueOf(decimal.format(totalPrice)));
         if(order.isPayMethod()){
             rbtmCash.setSelected(true);
         }else{
             rbtmCard.setSelected(true);
         }
-        
-        
-        
-        
-        
-        
-        
         
         
     }
