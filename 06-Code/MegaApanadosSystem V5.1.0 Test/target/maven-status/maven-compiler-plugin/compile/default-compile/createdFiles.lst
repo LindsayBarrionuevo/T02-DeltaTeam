@@ -20,6 +20,8 @@ ec\edu\espe\apanadossystem\controller\DBManager.class
 ec\edu\espe\apanadossystem\view\FrmPayment$1.class
 ec\edu\espe\apanadossystem\view\FrmRate$2.class
 ec\edu\espe\apanadossystem\view\FrmOrder$2.class
+ec\edu\espe\apanadossystem\model\VIPOrderCreator.class
+ec\edu\espe\apanadossystem\model\OrderCreator.class
 ec\edu\espe\apanadossystem\view\FrmPayment$10.class
 ec\edu\espe\apanadossystem\view\FrmContact.class
 ec\edu\espe\apanadossystem\view\FrmPayment$3.class
@@ -27,6 +29,7 @@ ec\edu\espe\apanadossystem\view\FrmCard$5.class
 ec\edu\espe\apanadossystem\view\FrmRate.class
 ec\edu\espe\apanadossystem\view\FrmContact$3.class
 ec\edu\espe\apanadossystem\view\FrmCard$2.class
+ec\edu\espe\apanadossystem\model\RegularOrderCreator.class
 ec\edu\espe\apanadossystem\model\ApanadosSystem.class
 ec\edu\espe\apanadossystem\view\FrmMenuFood$3.class
 ec\edu\espe\apanadossystem\view\FrmOrder.class

@@ -4,6 +4,8 @@
  */
 package ec.edu.espe.apanadossystem.model;
 
+import java.util.List;
+import java.util.ArrayList;
 /**
  *
  * @author Christopher Bazurto, DeltaTeam, DCCO-ESPE

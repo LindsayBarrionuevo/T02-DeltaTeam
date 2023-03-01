@@ -4,6 +4,8 @@
  */
 package ec.edu.espe.apanadossystem.model;
 
+import java.util.List;
+import java.util.ArrayList;
 /**
  *
  * @author Christopher Bazurto, DeltaTeam, DCCO-ESPE
@@ -18,7 +20,8 @@ public abstract class OrderCreator {
     }
 
     public Order createOrder() {
-        Order order = new Order(customer.getName(), customer.getEmail(), customer.getID(), calculateTotalPrice(), false);
+  
+        Order order = new Order(0,  customer.getName(),  customer.getEmail(),customer.getID(), calculateTotalPrice(),false);
         return order;
     }
 
