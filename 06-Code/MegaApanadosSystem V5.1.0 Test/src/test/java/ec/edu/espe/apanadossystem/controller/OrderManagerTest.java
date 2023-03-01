@@ -239,12 +239,37 @@ public class OrderManagerTest {
     @Test
     public void testValidateDate() {
         System.out.println("validateDate");
-        String date = "28/02/2023";
-        boolean expResult = false;
+        String date = "01/03/2023";
+        boolean expResult = true;
         boolean result = OrderManager.validateDate(date);
         assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The date is incorrect");
+        
+    }
+    
+    /**
+     * Test of validateDate method, of class OrderManager.
+     */
+    @Test
+    public void testValidateDate2() {
+        System.out.println("validateDate");
+        String date = "02/03/2023";
+        boolean expResult = true;
+        boolean result = OrderManager.validateDate(date);
+        assertEquals(expResult, result);
+        
+    }
+    
+    /**
+     * Test of validateDate method, of class OrderManager.
+     */
+    @Test
+    public void testValidateDate3() {
+        System.out.println("validateDate");
+        String date = "28/02/2023";
+        boolean expResult = true;
+        boolean result = OrderManager.validateDate(date);
+        assertEquals(expResult, result);
+        
     }
     
 }

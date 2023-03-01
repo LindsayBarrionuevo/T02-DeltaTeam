@@ -54,6 +54,8 @@ ec\edu\espe\apanadossystem\model\Card.class
 ec\edu\espe\apanadossystem\view\FrmHomeSystem$3.class
 ec\edu\espe\apanadossystem\view\FrmPayment$8.class
 ec\edu\espe\apanadossystem\view\FrmInfo$1.class
+ec\edu\espe\apanadossystem\controller\TaxCalculatorController.class
+ec\edu\espe\apanadossystem\model\RestaurantTax.class
 ec\edu\espe\apanadossystem\view\FrmPayment$12.class
 ec\edu\espe\apanadossystem\model\Customer.class
 ec\edu\espe\apanadossystem\view\FrmOrder$4.class
