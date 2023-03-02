@@ -22,8 +22,8 @@ public class TaxCalculatorControllerTest {
     @Test
     public void testCalculateTotalPrice() {
         System.out.println("CalculateTotalPrice");
-        float price = 0.0F;
-        float expResult = 0.0F;
+        float price = 23.4F;
+        float expResult = 26.21F;
         float result = TaxCalculatorController.CalculateTotalPrice(price);
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
@@ -36,8 +36,8 @@ public class TaxCalculatorControllerTest {
     @Test
     public void testCalculateTaxValue() {
         System.out.println("CalculateTaxValue");
-        float price = 0.0F;
-        float expResult = 0.0F;
+        float price = 3.0F;
+        float expResult = 0.36F;
         float result = TaxCalculatorController.CalculateTaxValue(price);
         assertEquals(expResult, result, 0);
         // TODO review the generated test code and remove the default call to fail.
