@@ -1,4 +1,3 @@
-
 package ec.edu.espe.apanadossystem.model;
 
 /**
@@ -6,7 +5,7 @@ package ec.edu.espe.apanadossystem.model;
  * @author Lindsay Barrionuevo, DeltaTeam, DCCO-ESPE
  */
 public class Rate {
-    
+
     private String name;
     private String rating;
     private String comment;
@@ -63,6 +62,5 @@ public class Rate {
     public String toString() {
         return "Rate{" + "name=" + getName() + ", rating=" + getRating() + ", comment=" + getComment() + '}';
     }
-    
-    
+
 }

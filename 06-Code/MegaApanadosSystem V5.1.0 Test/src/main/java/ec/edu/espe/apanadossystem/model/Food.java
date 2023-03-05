@@ -5,6 +5,7 @@ package ec.edu.espe.apanadossystem.model;
  * @author Daniel Aviles, DeltaTeam, DCCO-ESPE
  */
 public class Food {
+
     private String name;
     private int amount;
     private double unityPrice;
@@ -48,15 +49,14 @@ public class Food {
     public void setTotalPrice(double totalPrice) {
         this.totalPrice = totalPrice;
     }
-    
-    public Object[] toArray(){
+
+    public Object[] toArray() {
         Object[] obj = new Object[4];
-        obj[0]=name;
-        obj[1]=amount;
-        obj[2]=unityPrice;
-        obj[3]=totalPrice;
+        obj[0] = name;
+        obj[1] = amount;
+        obj[2] = unityPrice;
+        obj[3] = totalPrice;
         return obj;
     }
 
-    
 }

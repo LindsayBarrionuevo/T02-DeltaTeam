@@ -5,6 +5,7 @@ package ec.edu.espe.apanadossystem.model;
  * @author Daniel Aviles, DeltaTeam, DCCO-ESPE
  */
 public class Menu {
+
     private int id;
     private String name;
     private double price;
@@ -43,10 +44,11 @@ public class Menu {
     public void setPrice(double price) {
         this.price = price;
     }
-    public Object[] toArray(){
+
+    public Object[] toArray() {
         Object[] obj = new Object[2];
-        obj[0]=name;
-        obj[1]=price;
+        obj[0] = name;
+        obj[1] = price;
         return obj;
     }
 }

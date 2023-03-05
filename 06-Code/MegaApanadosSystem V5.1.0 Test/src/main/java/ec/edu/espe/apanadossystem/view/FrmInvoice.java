@@ -1,6 +1,4 @@
-
 package ec.edu.espe.apanadossystem.view;
-
 
 import ec.edu.espe.apanadossystem.controller.OrderManager;
 import ec.edu.espe.apanadossystem.controller.TaxCalculatorController;
@@ -26,9 +24,9 @@ public class FrmInvoice extends javax.swing.JFrame {
     /**
      * Creates new form FrmInvoice
      */
-    public FrmInvoice(ArrayList<Food> Order,Order order,Customer customer){
+    public FrmInvoice(ArrayList<Food> Order, Order order, Customer customer) {
         initComponents();
-        OrderManager.initialiceTable( tblBilling,Order,txtPlus);
+        OrderManager.initialiceTable(tblBilling, Order, txtPlus);
         DateFormat dateFormat;
         String date;
         double taxValue;
@@ -36,34 +34,26 @@ public class FrmInvoice extends javax.swing.JFrame {
         DecimalFormat decimal;
         decimal = new DecimalFormat("#.00");
         RestaurantTax tax = RestaurantTax.getInstance();
-        
-        
-        totalPrice=TaxCalculatorController.CalculateTotalPrice((float) order.getTotalPrice());
-        taxValue=TaxCalculatorController.CalculateTaxValue((float) order.getTotalPrice());
+
+        totalPrice = TaxCalculatorController.CalculateTotalPrice((float) order.getTotalPrice());
+        taxValue = TaxCalculatorController.CalculateTaxValue((float) order.getTotalPrice());
         dateFormat = new SimpleDateFormat("d MMM yyyy, HH:mm:ss");
         date = dateFormat.format(new Date());
-        
+
         txtName.setText(order.getName());
         txtDateInvoice.setText(date);
         txtID.setText(String.valueOf(order.getID()));
-        txtAddres.setText(customer.getAddres());
+        txtAddres.setText(customer.getAddress());
         txtEmail.setText(customer.getEmail());
         txtIDBiiling.setText(String.valueOf(order.getID()));
         txtTax.setText(String.valueOf(decimal.format(taxValue)));
         txtTotal.setText(String.valueOf(decimal.format(totalPrice)));
-        if(order.isPayMethod()){
+        if (order.isPayMethod()) {
             rbtmCash.setSelected(true);
-        }else{
+        } else {
             rbtmCard.setSelected(true);
         }
-        
-        
-        
-        
-        
-        
-        
-        
+
     }
 
     /**
@@ -338,7 +328,6 @@ public class FrmInvoice extends javax.swing.JFrame {
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabel1;

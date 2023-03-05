@@ -5,6 +5,7 @@ package ec.edu.espe.apanadossystem.model;
  * @author Añasco Silvia, DeltaTeam, DCCO-ESPE
  */
 public class Card {
+
     private String cardOwner;
     private String numberCard;
     private int cvcCard;
@@ -48,6 +49,5 @@ public class Card {
     public void setDateVecCard(String dateVecCard) {
         this.dateVecCard = dateVecCard;
     }
-    
-    
+
 }

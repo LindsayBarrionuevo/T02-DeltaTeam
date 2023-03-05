@@ -1,4 +1,3 @@
-
 package ec.edu.espe.apanadossystem.view;
 
 import com.mongodb.MongoException;
@@ -22,19 +21,19 @@ import org.bson.types.ObjectId;
  * @author Lindsay Barrionuevo, DeltaTeam, DCCO-ESPE
  */
 public class FrmRate extends javax.swing.JFrame {
-    
-    
+
     ArrayList<Food> newFoodOrder;
     Order newOrder;
     Customer newCustomer;
+
     /**
      * Creates new form FrmRate
      */
-    public FrmRate(ArrayList<Food> Order,Order order,Customer customer) {
+    public FrmRate(ArrayList<Food> Order, Order order, Customer customer) {
         initComponents();
-       newFoodOrder = Order;
-       newOrder = order;
-       newCustomer = customer;
+        newFoodOrder = Order;
+        newOrder = order;
+        newCustomer = customer;
     }
 
     /**
@@ -228,78 +227,73 @@ public class FrmRate extends javax.swing.JFrame {
 
     private void btnSentRateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSentRateActionPerformed
         JOptionPane.showMessageDialog(null, "Gracias por ayudarnos a mejorar\nEn breve se le desplegará su factura");
-        FrmInvoice windowFrmInvoice = new FrmInvoice(newFoodOrder,newOrder,newCustomer);
+        FrmInvoice windowFrmInvoice = new FrmInvoice(newFoodOrder, newOrder, newCustomer);
         windowFrmInvoice.setVisible(true);
         this.setVisible(false);
-        
+
         String url = "mongodb+srv://oop:oop@cluster0.f4j9tfw.mongodb.net/test";
-        long countComments=0;
-        float promComments=0;
-        int addRate=0;
-        RateApp rateApp=null;
-        String name=txtNameRate.getText();
-        String rating=txtRating.getText();
-        String comment=txtAreaComments.getText();
-        try(MongoClient mongoClient = MongoClients.create(url))
-        {
+        long countComments = 0;
+        float promComments = 0;
+        int addRate = 0;
+        RateApp rateApp = null;
+        String name = txtNameRate.getText();
+        String rating = txtRating.getText();
+        String comment = txtAreaComments.getText();
+        try ( MongoClient mongoClient = MongoClients.create(url)) {
             System.out.println(rateApp);
             MongoDatabase database = mongoClient.getDatabase("Project");
-            try
-            {
+            try {
                 MongoCollection<Document> collection = database.getCollection("Rate");
                 System.out.println(rateApp);
- 
+
                 Document Rate = new Document("_id", new ObjectId())
                         .append("Name:", name)
                         .append("RatingApp:", rating)
                         .append("Comments:", comment);
-                        
-                
+
                 collection.insertOne(Rate);
-                addRate=1;
+                addRate = 1;
                 countComments = collection.countDocuments();
                 System.out.println(collection.countDocuments());
-                promComments = (float)countComments/5;
+                promComments = (float) countComments / 5;
                 MongoCollection<Document> promRate = database.getCollection("RateProm");
-                    Document RateProm = new Document("_id", new ObjectId())
-                            .append("rateProm", promComments);
-                    promRate.insertOne(RateProm);
-            } catch (MongoException e)
-            {
-                JOptionPane.showMessageDialog(this,"Error Al Conectarse a la Base de Datos " + e,"Warning",JOptionPane.WARNING_MESSAGE);
-            }           
+                Document RateProm = new Document("_id", new ObjectId())
+                        .append("rateProm", promComments);
+                promRate.insertOne(RateProm);
+            } catch (MongoException e) {
+                JOptionPane.showMessageDialog(this, "Error Al Conectarse a la Base de Datos " + e, "Warning", JOptionPane.WARNING_MESSAGE);
+            }
         }
-        if (addRate == 1){
-            JOptionPane.showMessageDialog(this,"Información Enviada con éxito","Calificación",JOptionPane.INFORMATION_MESSAGE);
+        if (addRate == 1) {
+            JOptionPane.showMessageDialog(this, "Información Enviada con éxito", "Calificación", JOptionPane.INFORMATION_MESSAGE);
             txtNameRate.setText("");
             txtRating.setText("");
             txtAreaComments.setText("");
-        }else{
-            JOptionPane.showMessageDialog(this,"No se pudo enviar la información","Calificación",JOptionPane.WARNING_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "No se pudo enviar la información", "Calificación", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnSentRateActionPerformed
 
     private void btnSalirCalificaciónActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalirCalificaciónActionPerformed
         JOptionPane.showMessageDialog(this, "Gracias, A continuación se le desplegará su factura");
-        FrmInvoice windowFrmInvoice = new FrmInvoice(newFoodOrder,newOrder,newCustomer);
+        FrmInvoice windowFrmInvoice = new FrmInvoice(newFoodOrder, newOrder, newCustomer);
         windowFrmInvoice.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_btnSalirCalificaciónActionPerformed
 
     private void txtRatingKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtRatingKeyTyped
         char RatingNumber = evt.getKeyChar();
-        
-        if (txtRating.getText().length()>=2){
-            if((int)evt.getKeyChar()>48 && (int)evt.getKeyChar()<=53)
-            {  }
-            
+
+        if (txtRating.getText().length() >= 2) {
+            if ((int) evt.getKeyChar() > 48 && (int) evt.getKeyChar() <= 53) {
+            }
+
         }
     }//GEN-LAST:event_txtRatingKeyTyped
 
     /**
      * @param args the command line arguments
      */
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public static javax.swing.ButtonGroup btnGroupRate;

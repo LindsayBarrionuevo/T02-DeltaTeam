@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ec.edu.espe.apanadossystem.model;
 
 /**
@@ -9,6 +5,7 @@ package ec.edu.espe.apanadossystem.model;
  * @author Christopher Bazurto, DeltaTeam, DCCO-ESPE
  */
 public class ContactEmail {
+
     private String emailContact;
     private String nameContact;
     private String messageContact;
@@ -65,5 +62,5 @@ public class ContactEmail {
     public void setMessageContact(String messageContact) {
         this.messageContact = messageContact;
     }
-    
+
 }

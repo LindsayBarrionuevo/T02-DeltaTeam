@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package ec.edu.espe.apanadossystem.model;
 
 /**
@@ -9,17 +5,18 @@ package ec.edu.espe.apanadossystem.model;
  * @author Daniel Aviles, DeltaTeam, DCCO-ESPE
  */
 public class Customer {
+
     private String name;
-    private String Email;
+    private String email;
     private int ID;
-    private String addres;
+    private String address;
     private int phone;
 
     public Customer(String name, String Email, int ID, String addres, int phone) {
         this.name = name;
-        this.Email = Email;
+        this.email = Email;
         this.ID = ID;
-        this.addres = addres;
+        this.address = addres;
         this.phone = phone;
     }
 
@@ -32,11 +29,11 @@ public class Customer {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String Email) {
-        this.Email = Email;
+        this.email = Email;
     }
 
     public int getID() {
@@ -47,12 +44,12 @@ public class Customer {
         this.ID = ID;
     }
 
-    public String getAddres() {
-        return addres;
+    public String getAddress() {
+        return address;
     }
 
-    public void setAddres(String addres) {
-        this.addres = addres;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public int getPhone() {
@@ -62,12 +59,5 @@ public class Customer {
     public void setPhone(int phone) {
         this.phone = phone;
     }
-    
 
-    
-
-
-    
-
-    
 }

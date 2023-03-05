@@ -1,4 +1,3 @@
-
 package ec.edu.espe.apanadossystem.view;
 
 import com.mongodb.MongoException;
@@ -179,49 +178,45 @@ public class FrmContact extends javax.swing.JFrame {
     private void btnSentSupport1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSentSupport1ActionPerformed
         // TODO add your handling code here:
         String url = "mongodb+srv://oop:oop@cluster0.f4j9tfw.mongodb.net/test";
-        long countEmailSend=0;
-        float promEmailSend=0;
-        int validAdd=0;
-        RateApp contactEmail=null;
-        String nameContact=txtNameSupport.getText();
-        String emailContact=txtEmailSupport.getText();
-        String messageContact=txtAreaMessageSupport.getText();
-        try(MongoClient mongoClient = MongoClients.create(url))
-        {
+        long countEmailSend = 0;
+        float promEmailSend = 0;
+        int validAdd = 0;
+        RateApp contactEmail = null;
+        String nameContact = txtNameSupport.getText();
+        String emailContact = txtEmailSupport.getText();
+        String messageContact = txtAreaMessageSupport.getText();
+        try ( MongoClient mongoClient = MongoClients.create(url)) {
             System.out.println(contactEmail);
             MongoDatabase database = mongoClient.getDatabase("Project");
-            try
-            {
+            try {
                 MongoCollection<Document> collection = database.getCollection("MessageEmail");
                 System.out.println(contactEmail);
- 
+
                 Document MessageEmail = new Document("_id", new ObjectId())
                         .append("nameContact", nameContact)
                         .append("emailContact", emailContact)
                         .append("messageContact", messageContact);
-                        
-                
+
                 collection.insertOne(MessageEmail);
-                validAdd=1;
+                validAdd = 1;
                 countEmailSend = collection.countDocuments();
                 System.out.println(collection.countDocuments());
-                promEmailSend = (float)countEmailSend/24;
+                promEmailSend = (float) countEmailSend / 24;
                 MongoCollection<Document> promEmail = database.getCollection("PromEmailSend");
-                    Document PromEmailSend = new Document("_id", new ObjectId())
-                            .append("promEmailSend", promEmailSend);
-                    promEmail.insertOne(PromEmailSend);
-            } catch (MongoException e)
-            {
-                JOptionPane.showMessageDialog(this,"Error to connect with the database " + e,"Warning",JOptionPane.WARNING_MESSAGE);
-            }           
+                Document PromEmailSend = new Document("_id", new ObjectId())
+                        .append("promEmailSend", promEmailSend);
+                promEmail.insertOne(PromEmailSend);
+            } catch (MongoException e) {
+                JOptionPane.showMessageDialog(this, "Error to connect with the database " + e, "Warning", JOptionPane.WARNING_MESSAGE);
+            }
         }
-        if (validAdd == 1){
-            JOptionPane.showMessageDialog(this,"Mensaje enviado! Exitosamente!","Contactos",JOptionPane.INFORMATION_MESSAGE);
+        if (validAdd == 1) {
+            JOptionPane.showMessageDialog(this, "Mensaje enviado! Exitosamente!", "Contactos", JOptionPane.INFORMATION_MESSAGE);
             txtNameSupport.setText("");
             txtEmailSupport.setText("");
             txtAreaMessageSupport.setText("");
-        }else{
-            JOptionPane.showMessageDialog(this,"Mensaje no enviado!!!","Contactos",JOptionPane.WARNING_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Mensaje no enviado!!!", "Contactos", JOptionPane.WARNING_MESSAGE);
         }
     }//GEN-LAST:event_btnSentSupport1ActionPerformed
 

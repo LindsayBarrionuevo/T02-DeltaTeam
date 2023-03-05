@@ -5,28 +5,29 @@ package ec.edu.espe.apanadossystem.model;
  * @author Daniel Aviles, DeltaTeam, DCCO-ESPE
  */
 public class Order {
-    private int id;
+
+    private int idDataBase;
     private String name;
-    private String Email;
+    private String email;
     private int ID;
     private double totalPrice;
     private boolean payMethod;
 
     public Order(int id, String name, String Email, int ID, double totalPrice, boolean payMethod) {
-        this.id = id;
+        this.idDataBase = id;
         this.name = name;
-        this.Email = Email;
+        this.email = Email;
         this.ID = ID;
         this.totalPrice = totalPrice;
         this.payMethod = payMethod;
     }
 
     public int getId() {
-        return id;
+        return idDataBase;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.idDataBase = id;
     }
 
     public String getName() {
@@ -38,11 +39,11 @@ public class Order {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String Email) {
-        this.Email = Email;
+        this.email = Email;
     }
 
     public int getID() {
@@ -69,5 +70,4 @@ public class Order {
         this.payMethod = payMethod;
     }
 
-    
 }

@@ -1,4 +1,3 @@
-
 package ec.edu.espe.apanadossystem.controller;
 
 import com.mongodb.MongoException;
@@ -21,7 +20,7 @@ import org.bson.conversions.Bson;
  */
 public class DBManager {
 
-    public static Order saveOrder(boolean posibleToContinue, JTextField txtAddres, JTextField txtCellPhone, JTextField txtEmail, JTextField txtID, JTextField txtName, JLabel txtTotal,Boolean cash) {
+    public static Order saveOrder(boolean posibleToContinue, JTextField txtAddres, JTextField txtCellPhone, JTextField txtEmail, JTextField txtID, JTextField txtName, JLabel txtTotal, Boolean cash) {
         long collectionSize;
         int id;
         Order order = null;
@@ -32,14 +31,14 @@ public class DBManager {
                 MongoDatabase database = mongoClient.getDatabase("Project");
                 try {
                     Bson command = new BsonDocument("ping", new BsonInt64(1));
-                    Document commandResult = database.runCommand(command);
+
                     System.out.println("Connected successfully to server.");
                     MongoCollection<Document> collection = database.getCollection("Order");
 
                     collectionSize = collection.countDocuments();
                     id = (int) (collectionSize + 1);
 
-                    order = new Order(id, txtName.getText(), txtEmail.getText(), Integer.parseInt(txtID.getText()), Double.parseDouble(txtTotal.getText()),cash);
+                    order = new Order(id, txtName.getText(), txtEmail.getText(), Integer.parseInt(txtID.getText()), Double.parseDouble(txtTotal.getText()), cash);
 
                     Document newOrder = new Document("id", id);
                     newOrder.append("name", txtName.getText());
@@ -56,7 +55,7 @@ public class DBManager {
                 MongoDatabase database = mongoClient.getDatabase("Project");
                 try {
                     Bson command = new BsonDocument("ping", new BsonInt64(1));
-                    Document commandResult = database.runCommand(command);
+
                     System.out.println("Connected successfully to server.");
                     MongoCollection<Document> collection = database.getCollection("CustomerBillingData");
 
@@ -79,12 +78,7 @@ public class DBManager {
             }
         }
         return order;
-        
-        
+
     }
-    
-    
-    
-    
-    
+
 }

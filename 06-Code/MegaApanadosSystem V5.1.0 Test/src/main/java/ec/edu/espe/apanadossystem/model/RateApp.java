@@ -1,4 +1,3 @@
-
 package ec.edu.espe.apanadossystem.model;
 
 /**
@@ -6,6 +5,7 @@ package ec.edu.espe.apanadossystem.model;
  * @author Christopher Bazurto, DeltaTeam, DCCO-ESPE
  */
 public class RateApp {
+
     private String emailContact;
     private String nameContact;
     private String messageContact;
@@ -62,5 +62,5 @@ public class RateApp {
     public void setMessageContact(String messageContact) {
         this.messageContact = messageContact;
     }
-    
+
 }
